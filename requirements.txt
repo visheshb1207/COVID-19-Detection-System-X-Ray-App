@@ -1,0 +1,12 @@
+numpy
+tensorflow
+seaborn
+pandas
+flask
+keras
+scikit-learn
+tqdm
+opencv-python
+tensorflow-keras
+flask
+pickle

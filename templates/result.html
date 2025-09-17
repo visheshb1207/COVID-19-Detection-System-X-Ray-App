@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .result-container {
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.7s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #2575fc;
+        }
+
+        img {
+            max-width: 80%;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .prediction-result {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .prediction-result h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #6a11cb;
+        }
+
+        .confidence-bar {
+            position: relative;
+            height: 30px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border-radius: 15px;
+            text-align: right;
+            padding-right: 10px;
+            color: #fff;
+            font-weight: 600;
+            line-height: 30px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .prediction-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffeb3b;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Classification Result</h1>
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+
+        <div class="prediction-result">
+            <h2>Predicted Status:</h2>
+            <div class="prediction-label">{{ predicted_label }}</div>
+
+            <h2>Confidence Score:</h2>
+            <div class="confidence-bar">
+                <div class="confidence-fill" id="confidenceFill">{{ '%.2f' % (confidence_score * 100) }}%</div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fill = document.getElementById('confidenceFill');
+            const score = parseFloat(fill.innerText);
+            fill.style.width = score + "%";
+        });
+    </script>
+</body>
+</html>

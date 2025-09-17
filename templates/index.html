@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Covid Chest X-Ray Detection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: fadeIn 0.7s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Styled file input */
+        .file-input {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px dashed #2575fc;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #2575fc;
+            transition: all 0.3s ease;
+        }
+
+        .file-input:hover {
+            border-color: #6a11cb;
+            background-color: #f0f4ff;
+        }
+
+        .file-input input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Submit button */
+        input[type="submit"] {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #2575fc;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #6a11cb;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Covid Chest X-Ray Detection</h1>
+        <p>Select an X-ray image to detect Covid, Viral Pneumonia, or Normal condition.</p>
+
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <label class="file-input">
+                Click to select file or drag here
+                <input type="file" name="file" accept="image/*" required>
+            </label>
+            <input type="submit" value="Analyze Image">
+        </form>
+
+        <a href="{{ url_for('camera') }}">📷 Open Camera</a>
+    </div>
+</body>
+</html>
