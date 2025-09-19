@@ -1,12 +1,11 @@
-<h1 align='center>
+<h1 align='center'>
   🩻 X-Ray Detection App 
 </h1>
    
 
-A Flask-based web application that uses deep learning (TensorFlow) to detect and classify chest X-ray images into four categories:  
+A Flask-based web application that uses deep learning (TensorFlow) to detect and classify chest X-ray images into three categories:  
 
-- **COVID-19**  
-- **Lung Opacity**  
+- **COVID-19**   
 - **Pneumonia**  
 - **Normal**  
 
@@ -61,9 +60,29 @@ python app.py
 
 ## 📸 Screenshots
 
-<img width="1919" height="943" alt="image" src="https://github.com/user-attachments/assets/7bcfcda0-db27-4b83-860c-0f31ff48fe2d" />
+<img width="1800" height="943" alt="image" src="https://github.com/user-attachments/assets/7bcfcda0-db27-4b83-860c-0f31ff48fe2d" />
 
 
-<img width="1914" height="947" alt="image" src="https://github.com/user-attachments/assets/6a96d9e4-8ff8-45f2-be25-4bd9f2c9c697" />
+<img width="1800" height="947" alt="image" src="https://github.com/user-attachments/assets/6a96d9e4-8ff8-45f2-be25-4bd9f2c9c697" />
 
-<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/5b9f2205-f3c5-4a08-9dc0-06f18a71ecd3" />
+<img width="1800" height="954" alt="image" src="https://github.com/user-attachments/assets/5b9f2205-f3c5-4a08-9dc0-06f18a71ecd3" />
+
+## 🔮 Future Improvements  
+
+- Add Grad-CAM visualization for infected regions.  
+- Expand disease categories.  
+- Build a hospital dashboard version.  
+
+---
+
+## 🤝 Contributing  
+
+Contributions are welcome! Fork the repo and open a pull request.  
+
+---
+
+## 📜 License  
+
+This project is licensed under the **MIT License**. 
+2025 @ Vishesh Bairwa
+
