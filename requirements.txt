@@ -9,3 +9,4 @@ tqdm
 opencv-python
 tensorflow-keras
 flask
+gunicorn
