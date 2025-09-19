@@ -1,4 +1,7 @@
-# 🩻 X-Ray Detection App  
+<h1 align='center>
+  🩻 X-Ray Detection App 
+</h1>
+   
 
 A Flask-based web application that uses deep learning (TensorFlow) to detect and classify chest X-ray images into four categories:  
 
@@ -58,14 +61,9 @@ python app.py
 
 ## 📸 Screenshots
 
-Add preview images here (upload to GitHub and use links).
+<img width="1919" height="943" alt="image" src="https://github.com/user-attachments/assets/7bcfcda0-db27-4b83-860c-0f31ff48fe2d" />
 
-Example format:
 
-Add preview images here (upload to GitHub and use links).
+<img width="1914" height="947" alt="image" src="https://github.com/user-attachments/assets/6a96d9e4-8ff8-45f2-be25-4bd9f2c9c697" />
 
-Example format:
-
-Add preview images here (upload to GitHub and use links).
-
-Example format:
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/5b9f2205-f3c5-4a08-9dc0-06f18a71ecd3" />
